@@ -14,6 +14,7 @@
 library(dplyr)
 library(ggplot2)
 library(readxl)
+library(summarytools)
 
 sessionInfo()
 
@@ -23,6 +24,7 @@ sessionInfo()
 # ggplot2_3.5.1
 # dplyr_1.1.4 
 # readxl_1.4.3
+# summarytools_1.0.1
 
 # read in raw data from paper, from .xlsx file
 # file has multiple sheets, we want sheet 4, Final Results
@@ -47,8 +49,26 @@ dat <- dat %>%
   mutate_at(c(2:5,7,8), as.numeric)
 head(dat)
 
+###### preprocessing done, now on to figures
+
+# select only those with complete cases
+# can just filter on the first time point
+head(dat)
+dim(dat)
+dat_complete <- dat[complete.cases(dat$`2005`), ] 
+head(dat_complete)
+dim(dat_complete)
+
+# recreate figure 1, overall mean frequencies
+
+summarytools::descr(dat$`2005`)
+summarytools::descr(dat$`2012`)
+summarytools::descr(dat$`2019`)
+summarytools::descr(dat$`2022`)
 
 
-
-
+summarytools::descr(dat_complete$`2005`)
+summarytools::descr(dat_complete$`2012`)
+summarytools::descr(dat_complete$`2019`)
+summarytools::descr(dat_complete$`2022`)
 
