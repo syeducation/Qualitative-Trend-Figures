@@ -31,9 +31,22 @@ dat <- readxl::read_xlsx("Comprehensive Tables - ALL RESULTS.xlsx", sheet = "Fin
 head(dat)
 tail(dat)
 
+# need to remove final summary row
+dim(dat)
+dat <- dat[-96,]
+dim(dat)
+tail(dat)
+
 # need to replace "-" with NAs
+head(dat)
+dat[dat == "-"] <- NA
+head(dat)
+
 # need to convert columns to numeric
-# need to remove final summary column
+dat <- dat %>% 
+  mutate_at(c(2:5,7,8), as.numeric)
+head(dat)
+
 
 
 
