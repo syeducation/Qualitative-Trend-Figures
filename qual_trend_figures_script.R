@@ -4,7 +4,7 @@
 ##### Stecyk et al. (2025, American Psychologist) 
 ##### on qualitative articles published in APA and APS journals.
 ##### By Moin Syed 
-##### May 27, 2025 + May 30 messing with GitHub, a second time
+##### May 27, 2025 + May 30 messing with GitHub, a third time!
 #########################################################################
 #########################################################################
 
