@@ -72,3 +72,8 @@ summarytools::descr(dat_complete$`2012`)
 summarytools::descr(dat_complete$`2019`)
 summarytools::descr(dat_complete$`2022`)
 
+##### Reshape data to long
+
+head(dat)
+
+
